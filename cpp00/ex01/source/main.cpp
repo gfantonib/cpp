@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/10 19:04:25 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/10 20:16:32 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int main(void)
 	{
 		userinput = options();
 		if (userinput == "ADD")
-			phonebook.add();
+			phonebook.Add();
 		else if (userinput == "SEARCH")
-			phonebook.search();
+			phonebook.Search();
 	}
 	return (0);
 }

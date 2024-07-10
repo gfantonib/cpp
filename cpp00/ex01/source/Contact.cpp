@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:42:13 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/10 17:04:20 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/10 19:37:09 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,15 @@ Contact::Contact(void): first_name(""),
 						nickname(""),
 						phone_number(""),
 						darkest_secret("") {}
-								 
+
+// Contact::Contact(void)
+// {
+// 	first_name = "";
+// 	last_name = "";
+// 	nickname = "";
+// 	phone_number = "";
+// 	darkest_secret = "";
+// }
 
 std::string Contact::getFirstName()
 {

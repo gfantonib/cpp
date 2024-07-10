@@ -6,11 +6,11 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/10 15:44:07 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/10 17:05:38 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contacts.hpp"
+#include "Contact.hpp"
 
 std::string options(void);
 
@@ -22,6 +22,9 @@ int main(void)
 	// userinput = options();
 	// std::cout << userinput << std::endl;
 
+	std::cout << someone.getFirstName() << std::endl;
+	someone.setFirstName("melvin");
+	someone.setFirstName("juni");
 	std::cout << someone.getFirstName() << std::endl;
 	return (0);
 }

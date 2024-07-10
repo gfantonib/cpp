@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 20:05:27 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/10 20:16:05 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/10 20:39:03 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ void PhoneBook::Add(void)
 {
 	std::string user_info;
 	
+	if (i == 8)
+		i = 0;
+		
 	user_info = getUserInfo("First Name");
 	contact_array[i].setFirstName(user_info);
 
@@ -36,15 +39,73 @@ void PhoneBook::Add(void)
 
 	user_info = getUserInfo("Darkest Secret");
 	contact_array[i].setDarkestSecret(user_info);
+
+	i++;
 }
 
 void PhoneBook::Search(void)
 {
-	std::cout << contact_array[i].getFirstName() << std::endl;
-	std::cout << contact_array[i].getLastName() << std::endl;
-	std::cout << contact_array[i].getNickname() << std::endl;
-	std::cout << contact_array[i].getPhoneNumber() << std::endl;
-	std::cout << contact_array[i].getDarkestSecret() << std::endl;
+	std::cout << contact_array[0].getFirstName() << std::endl;
+	std::cout << contact_array[0].getLastName() << std::endl;
+	std::cout << contact_array[0].getNickname() << std::endl;
+	std::cout << contact_array[0].getPhoneNumber() << std::endl;
+	std::cout << contact_array[0].getDarkestSecret() << std::endl;
+
+	std::cout << std::endl;
+	
+	std::cout << contact_array[1].getFirstName() << std::endl;
+	std::cout << contact_array[1].getLastName() << std::endl;
+	std::cout << contact_array[1].getNickname() << std::endl;
+	std::cout << contact_array[1].getPhoneNumber() << std::endl;
+	std::cout << contact_array[1].getDarkestSecret() << std::endl;
+
+	std::cout << std::endl;
+	
+	std::cout << contact_array[2].getFirstName() << std::endl;
+	std::cout << contact_array[2].getLastName() << std::endl;
+	std::cout << contact_array[2].getNickname() << std::endl;
+	std::cout << contact_array[2].getPhoneNumber() << std::endl;
+	std::cout << contact_array[2].getDarkestSecret() << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << contact_array[3].getFirstName() << std::endl;
+	std::cout << contact_array[3].getLastName() << std::endl;
+	std::cout << contact_array[3].getNickname() << std::endl;
+	std::cout << contact_array[3].getPhoneNumber() << std::endl;
+	std::cout << contact_array[3].getDarkestSecret() << std::endl;
+
+	std::cout << std::endl;
+	
+	std::cout << contact_array[4].getFirstName() << std::endl;
+	std::cout << contact_array[4].getLastName() << std::endl;
+	std::cout << contact_array[4].getNickname() << std::endl;
+	std::cout << contact_array[4].getPhoneNumber() << std::endl;
+	std::cout << contact_array[4].getDarkestSecret() << std::endl;
+
+	std::cout << std::endl;
+	
+	std::cout << contact_array[5].getFirstName() << std::endl;
+	std::cout << contact_array[5].getLastName() << std::endl;
+	std::cout << contact_array[5].getNickname() << std::endl;
+	std::cout << contact_array[5].getPhoneNumber() << std::endl;
+	std::cout << contact_array[5].getDarkestSecret() << std::endl;
+	
+	std::cout << std::endl;
+
+	std::cout << contact_array[6].getFirstName() << std::endl;
+	std::cout << contact_array[6].getLastName() << std::endl;
+	std::cout << contact_array[6].getNickname() << std::endl;
+	std::cout << contact_array[6].getPhoneNumber() << std::endl;
+	std::cout << contact_array[6].getDarkestSecret() << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << contact_array[7].getFirstName() << std::endl;
+	std::cout << contact_array[7].getLastName() << std::endl;
+	std::cout << contact_array[7].getNickname() << std::endl;
+	std::cout << contact_array[7].getPhoneNumber() << std::endl;
+	std::cout << contact_array[7].getDarkestSecret() << std::endl;
 }
 
 std::string PhoneBook::getUserInfo(std::string str)

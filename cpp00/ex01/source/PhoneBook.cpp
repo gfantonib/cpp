@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 20:05:27 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/11 16:19:46 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:29:57 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,12 @@ void PhoneBook::Search(void)
 	std::string str;
 	
 	std::cout << std::endl;
-	
+	if (!contact_array[0].isValidContact())
+	{
+		std::cout << "you need to have at least one contact in the list!";
+		std::cout << std::endl;
+		return ;
+	}
 	iter = 0;
 	while (iter < 8)
 	{

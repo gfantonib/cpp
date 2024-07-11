@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:42:13 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/11 13:17:40 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/11 14:43:14 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,14 @@ std::string Contact::getDarkestSecret()
 void Contact::setDarkestSecret(std::string str)
 {
 	darkest_secret = str;
+}
+
+int	Contact::isValidContact()
+{
+	std::string str;
+	
+	str = getFirstName();
+	if (str == "")
+		return (0);
+	return (1);
 }

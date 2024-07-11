@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 15:31:27 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/10 17:03:32 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/11 14:42:39 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,6 @@ class Contact
 
 		std::string getDarkestSecret();
 		void setDarkestSecret(std::string str);
+
+		int isValidContact();
 };

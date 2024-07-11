@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 15:31:27 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/11 13:12:46 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/11 15:58:04 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ class PhoneBook
 	
 	std::string getUserInfo(std::string str);
 	void		printFormatStr(std::string str);
-	int			contactExist(Contact onecontact);
+	int			getID();
+	void 		displayChosenContact(int id);
+	// int			contactExist(Contact onecontact);
 	public:
 		PhoneBook(void);
 		void Add(void);

@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/10 20:16:32 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:13:15 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ std::string options(void)
 	std::string userinput;
 	while (userinput != "ADD" && userinput != "SEARCH" && userinput != "EXIT")
 	{
-		std::cout << std::endl << "----- main menu -----" << std::endl << std::endl;
+		// std::cout << std::endl << "----- main menu -----" << std::endl << std::endl;
+		std::cout << std::endl;
 		std::cout << "ADD" << std::endl;
 		std::cout << "SEARCH" << std::endl;
 		std::cout << "EXIT" << std::endl << std::endl;
-		std::cout << "> ";
+		std::cout << "chose your option: ";
 		std::getline(std::cin, userinput);
 	}
 	return (userinput);

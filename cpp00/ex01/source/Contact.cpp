@@ -6,17 +6,17 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:42:13 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/10 19:37:09 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/11 12:30:58 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 Contact::Contact(void): first_name(""),
-						last_name(""),
-						nickname(""),
-						phone_number(""),
-						darkest_secret("") {}
+						last_name("aaaaaaaaaabbb"),
+						nickname("aaaaaaaaaabbb"),
+						phone_number("aaaaaaaaaabbb"),
+						darkest_secret("aaaaaaaaaabbb") {}
 
 // Contact::Contact(void)
 // {

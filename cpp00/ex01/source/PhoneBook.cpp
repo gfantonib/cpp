@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 20:05:27 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/11 12:30:06 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/11 13:22:02 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,31 @@ void PhoneBook::Add(void)
 
 void PhoneBook::Search(void)
 {
+	int i;
 	std::string str;
 	
-	str = contact_array[0].getFirstName();
-	printFormatStr(str);
-	std::cout << std::endl;
-	
+	i = 0;
+	while (i < 8)
+	{
+		if (contactExist(contact_array[i]))
+		{
+			std::cout << "|";
+			str = contact_array[i].getFirstName();
+			printFormatStr(str);
+			std::cout << "|";
+
+			str = contact_array[i].getLastName();
+			printFormatStr(str);
+			std::cout << "|";
+			
+			str = contact_array[i].getNickname();
+			printFormatStr(str);
+			std::cout << "|";
+			
+			std::cout << std::endl;
+		}
+		i++;
+	}
 	// std::cout << contact_array[0].getLastName() << "|";
 	// std::cout << contact_array[0].getNickname() << std::endl;
 
@@ -150,3 +169,11 @@ void PhoneBook::printFormatStr(std::string str)
 	}
 }
 
+int	PhoneBook::contactExist(Contact onecontact)
+{
+	if (onecontact.getFirstName() != ""
+		|| onecontact.getLastName() != ""
+		|| onecontact.getNickname() != "")
+		return (1);
+	return (0);
+}

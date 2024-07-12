@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 15:31:27 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/12 11:47:39 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/12 14:51:58 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Zombi
 		
 	public:
 		// Zombi(void);
-		Zombi(std::string name): name(name) {} // default constructor
-		~Zombi(void){std::cout << name << " is beeing destroyed!" << std::endl;}
+		Zombi(std::string name); // default constructor
+		~Zombi(void); // destructor
 		void announce(void);
 };

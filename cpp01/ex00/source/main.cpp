@@ -1,46 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   class.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 09:37:12 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/10 09:59:50 by gfantoni         ###   ########.fr       */
+/*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
+/*   Updated: 2024/07/12 12:00:29 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Zombi.hpp"
 
-class X 
-{
-	private:
-		int m;
-	public:
-		X(int i = 0): m{i} {}
-		int mf(int i)
-		{
-			int old = m;
-			m = i;
-			return i;
-		}
-};
-
-int user(X var, X* ptr)
-{
-	int x = var.mf(7);
-	int y = ptr->mf(9);
-	return (x);
-}
+Zombi* newZombi(std::string name);
+void randomChump(std::string name);
 
 int main(void)
 {
-	int	result;
-	X var1 {7};
-	result = user(var1, &var1);
-	std::cout << result << std::endl;
+	Zombi benjor("benjor");
+	Zombi *benson;
 	
-	X var2;
-	result = var2.mf(19);
-	std::cout << result << std::endl;
+	benjor.announce();
+	benson = newZombi("benson");
+	benson->announce();
+	benjor.announce();
+	randomChump("chump");
+	delete(benson);
+	return (0);
 }

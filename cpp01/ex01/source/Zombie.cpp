@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/12 14:47:32 by gfantoni         ###   ########.fr       */
+/*   Created: 2024/07/10 16:42:13 by gfantoni          #+#    #+#             */
+/*   Updated: 2024/07/12 14:23:08 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* zombieHorde( int N, std::string name )
+Zombie::Zombie(void): name("") {} // default constructor
+Zombie::Zombie(std::string name): name(name) {} // alternative constructor
+Zombie::~Zombie(void){std::cout << name << " is beeing destroyed!" << std::endl;} // destructor
+
+void Zombie::announce(void)
 {
-	Zombie* zombiehorde;
-	
-	zombiehorde = new Zombie[N];
-	for (int i = 0; i < N; i++)
-		zombiehorde[i].setZombieName(name);
-	return (&zombiehorde[0]);
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-int main(void)
+void Zombie::setZombieName(std::string zombiename)
 {
-	int N;
-	Zombie *benjorhorde;
-
-	N = 10;
-	benjorhorde = zombieHorde(N, "benjor");
-	for (int i = 0; i < N; i++)
-	{
-		std::cout << i+1 << ". ";
-		benjorhorde[i].announce();
-	}
-	delete [] benjorhorde;
-	return (0);
+	name = zombiename;
 }
+

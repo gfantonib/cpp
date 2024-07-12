@@ -1,10 +1,10 @@
-NAME = horde
+NAME = brainz
 CPP = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 INCPATH = include
 HEADER = -I$(INCPATH)
 SRCPATH = source
-SRCFILES = main.cpp Zombie.cpp
+SRCFILES = main.cpp Zombi.cpp newZombi.cpp randomChump.cpp
 SRC = $(addprefix $(SRCPATH)/, $(SRCFILES))
 
 all: $(NAME)

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombi.cpp                                       :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 11:37:11 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/12 11:37:40 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:46:58 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombi.hpp"
+#include "Zombie.hpp"
 
-Zombi* newZombi(std::string name)
+Zombie* newZombie(std::string name)
 {
-	Zombi* zombi_pointer;
+	Zombie* zombi_pointer;
 	
-	zombi_pointer = new Zombi(name);
+	zombi_pointer = new Zombie(name);
 	return (zombi_pointer);
 }

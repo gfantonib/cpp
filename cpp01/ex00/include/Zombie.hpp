@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombi.cpp                                          :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 16:42:13 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/12 14:52:33 by gfantoni         ###   ########.fr       */
+/*   Created: 2024/07/12 19:45:52 by gfantoni          #+#    #+#             */
+/*   Updated: 2024/07/12 19:46:03 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombi.hpp"
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-// Zombi::Zombi(void): name("") {}
-Zombi::Zombi(std::string name): name(name) {} // default constructor
-Zombi::~Zombi(void){std::cout << name << " is beeing destroyed!" << std::endl;} // destructor
+#include <iostream>
 
-void Zombi::announce(void)
+class Zombie
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+	private:
+		std::string name;
+		
+	public:
+		// Zombie(void);
+		Zombie(std::string name); // default constructor
+		~Zombie(void); // destructor
+		void announce(void);
+};
+
+#endif

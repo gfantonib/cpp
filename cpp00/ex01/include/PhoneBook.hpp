@@ -6,9 +6,12 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 15:31:27 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/11 17:45:45 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:50:48 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
 #include <iostream>
 #include "Contact.hpp"
@@ -29,3 +32,5 @@ class PhoneBook
 		void Search(void);
 				
 };
+
+#endif

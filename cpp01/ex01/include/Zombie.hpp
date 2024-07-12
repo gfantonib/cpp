@@ -1,14 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombi.hpp                                          :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 15:31:27 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/12 14:22:09 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:44:09 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 #include <iostream>
 
@@ -25,3 +28,5 @@ class Zombie
 		void setZombieName(std::string zombiename);
 		void announce(void);
 };
+
+#endif

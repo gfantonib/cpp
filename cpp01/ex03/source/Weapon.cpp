@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 16:28:53 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/12 16:35:08 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:28:33 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Weapon::Weapon(void): type(""){} // default constructor
 Weapon::Weapon(std::string type): type(type){} // constructor
 
-std::string* Weapon::getType(void)
+std::string const* Weapon::getType(void)
 {
 	return(&type);
 }

@@ -4,7 +4,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 INCPATH = include
 HEADER = -I$(INCPATH)
 SRCPATH = source
-SRCFILES = main.cpp Zombie.cpp
+SRCFILES = main.cpp Zombie.cpp zombieHorde.cpp
 SRC = $(addprefix $(SRCPATH)/, $(SRCFILES))
 
 all: $(NAME)

@@ -6,43 +6,38 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/12 19:02:04 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/19 11:55:29 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "Weapon.hpp"
+#include <iostream>
+#include <fstream>
+// #include <sstream>
+// #include <string>
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-
-// int main(void)
-// {
-// 	Weapon pistol("pistol");
-// 	Weapon knive("knive");
-// 	HumanA oliver("oliver", pistol);
-// 	HumanB helio("helio");
-	
-// 	oliver.attack();
-// 	helio.attack();
-// 	helio.setWeapon(knive);
-// 	helio.attack();
-// 	return (0);
-// }
-int main()
+int main(int argc, char *argv[])
 {
+	if (argc != 4)
 	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
+		std::cout << "wrong argument count!\nusage: ./loser filename s1 s2" << std::endl;
+		return (1);
 	}
+	std::ifstream src_file(argv[1]);
+	if (!src_file.is_open())
 	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
+		std::cout << "src_file could not be opened!" << std::endl;
+		return (1);
 	}
+	std::string s1(argv[2]);
+	std::size_t len = s1.length();
+	std::string line;
+	std::size_t start;
+	while (std::getline(src_file, line))
+	{
+		start = line.find(s1);
+		line.erase(start, len);
+		std::cout << line << std::endl;
+	}
+	src_file.close();
+	return (0);
 }

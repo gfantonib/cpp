@@ -1,4 +1,4 @@
-NAME = losers
+NAME = executable
 CPP = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 INCPATH = include

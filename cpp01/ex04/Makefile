@@ -31,7 +31,7 @@ $(OBJPATH)/%.o: $(SRCPATH)/%.cpp
 $(OBJPATH):
 	mkdir -p $(OBJPATH)
 
-test:
+test: all
 	$(MAKE) NAME=$(NAME_TST) SRCFILES=$(SRCFILES_TST) SRCMAIN=$(SRCMAIN_TST) OBJ=$(OBJ_TST) MAINOBJ=$(MAINOBJ_TST) all
 
 clean:
@@ -39,6 +39,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME) $(NAME_TST)
+	rm -f file*
 
 re: fclean all
 

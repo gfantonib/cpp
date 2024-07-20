@@ -1,6 +1,12 @@
+# all
 *.vscode/
+*object
 *a.out
-*awesome
 *executable
 *tst_executable
+
+#cpp00
+*awesome
+
+#cpp01
 *.replace

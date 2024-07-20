@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/19 17:20:41 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/20 08:53:49 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,19 @@ int main(int argc, char *argv[])
 	if (src_file.peek() == std::ifstream::traits_type::eof())
 	{
 		std::cout << "empty file! aborting..." << std::endl;
+		src_file.close();
+		out_file.close();
 		return (1);
 	}
 	std::string s1(argv[2]);
 	std::string s2(argv[3]);
+	if (s1.empty() || s2.empty())
+	{
+		std::cout << "empty string! aborting..." << std::endl;
+		src_file.close();
+		out_file.close();
+		return (1);
+	}
 	std::size_t s1_len = s1.length();
 	std::string line;
 	std::size_t start;

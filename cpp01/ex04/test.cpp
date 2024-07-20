@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 14:19:59 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/20 09:27:16 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/20 10:11:23 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,13 @@ int main(void)
 	file8 << "aaaxxxaaa" << std::endl;
 	file8 << "xxxaaaxxx" << std::endl;
 	command = "./executable file8 xxx yyy";
+	system(command.c_str());
+
+	std::ofstream file9("file9");
+	file9 << "xxxxxxxxx" << std::endl;
+	file9 << "xxxxxxxxx" << std::endl;
+	file9 << "xxxxxxxxx" << std::endl;
+	command = "./executable file9 xxx yyy";
 	system(command.c_str());
 	return (0);
 }

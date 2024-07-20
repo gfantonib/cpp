@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/20 08:53:49 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/20 09:10:35 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,10 @@ int main(int argc, char *argv[])
 	{
 		start = line.find(s1);
 		if (start == std::string::npos)
+		{
+			out_file << line << std::endl;
 			continue;
+		}
 		line.erase(start, s1_len);
 		line.insert(start, s2);
 		out_file << line << std::endl;

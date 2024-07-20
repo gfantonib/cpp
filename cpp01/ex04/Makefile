@@ -36,10 +36,10 @@ test: all
 
 clean:
 	rm -rf $(OBJ) $(OBJ_TST) $(OBJPATH)
+	rm -f file*
 
 fclean: clean
 	rm -f $(NAME) $(NAME_TST)
-	rm -f file*
 
 re: fclean all
 

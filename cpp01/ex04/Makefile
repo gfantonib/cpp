@@ -11,7 +11,7 @@ SRCMAIN = main.cpp
 MAINOBJ = $(OBJPATH)/$(SRCMAIN:.cpp=.o)
 OBJ = $(SRCFILES:%.cpp=$(OBJPATH)/%.o)
 
-NAME_TST = executable_tst
+NAME_TST = tst
 SRCFILES_TST =
 SRCMAIN_TST = test.cpp
 MAINOBJ_TST = $(OBJPATH)/$(SRCMAIN_TST:.cpp=.o)

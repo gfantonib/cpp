@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 15:31:27 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/12 19:50:48 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/24 19:21:09 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define PHONEBOOK_HPP
 
 #include <iostream>
+#include <cstdlib>
 #include "Contact.hpp"
 
 class PhoneBook
@@ -25,7 +26,6 @@ class PhoneBook
 	void		printFormatStr(std::string str);
 	int			getID();
 	void 		displayChosenContact(int id);
-	// int			contactExist(Contact onecontact);
 	public:
 		PhoneBook(void);
 		void Add(void);

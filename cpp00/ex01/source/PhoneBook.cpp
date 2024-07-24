@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 20:05:27 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/11 17:37:14 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/24 19:19:22 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,11 @@ std::string PhoneBook::getUserInfo(std::string str)
 	std::cout << str;
 	std::cout << " here: ";
 	std::getline(std::cin, buff);
-	// std::cout << std::endl;
+	if (std::cin.eof())
+	{
+		std::cout << std::endl;
+		exit(2);
+	}
 	if (buff == "")
 	{
 		std::cout << std::endl;
@@ -140,6 +144,11 @@ int PhoneBook::getID()
 	std::string buff;
 	std::cout << "select a index to be displayed: ";
 	std::getline(std::cin, buff);
+	if (std::cin.eof())
+	{
+		std::cout << std::endl;
+		exit(2);
+	}
 	id = buff[0] - '0';
 	if (buff.size() == 1 && id >= 0 && id <= 7 && contact_array[id].isValidContact())
 		return (id);
@@ -149,14 +158,6 @@ int PhoneBook::getID()
 	id = getID();
 	return (id);
 }
-// int	PhoneBook::contactExist(Contact onecontact)
-// {
-// 	if (onecontact.getFirstName() != ""
-// 		|| onecontact.getLastName() != ""
-// 		|| onecontact.getNickname() != "")
-// 		return (1);
-// 	return (0);
-// }
 
 void PhoneBook::displayChosenContact(int id)
 {

@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/24 15:04:50 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/24 15:28:38 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,27 @@ int Harl::test( int nbr )
 
 void Harl::complain( std::string level )
 {
-	typedef void (Harl::*poiter_to_function)( void );
-	std::map <std::string, poiter_to_function> functionMap;
-
-	functionMap["debug"] = &Harl::debug;
-	functionMap["info"] = &Harl::info;
-	functionMap["warning"] = &Harl::warning;
-	functionMap["error"] = &Harl::error;
-	
-	std::map<std::string, poiter_to_function>::iterator it = functionMap.find(level);
-	if (it != functionMap.end())
+	std::string levellst[4] =
 	{
-		poiter_to_function function = it->second;
-		(this->*function)();
+		"debug",
+		"info",
+		"warning",
+		"error"
+	};
+	void (Harl::*function[4])( void ) = 
+	{
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error
+	};
+	for (int i = 0; i < 4; i++)
+	{
+		if (levellst[i] == level)
+		{
+			(this->*function[i])();	
+			return;
+		}
 	}
-	else
-		std::cout << "invalid complain!" << std::endl;
+	std::cout << "invalid complain!" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 15:31:27 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/24 19:21:09 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/25 08:05:40 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <iomanip>
 #include "Contact.hpp"
 
 class PhoneBook

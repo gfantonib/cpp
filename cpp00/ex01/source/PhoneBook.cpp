@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 20:05:27 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/24 19:19:22 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/25 08:53:03 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,26 +116,13 @@ std::string PhoneBook::getUserInfo(std::string str)
 
 void PhoneBook::printFormatStr(std::string str)
 {
-	size_t	i;
-	size_t	size;
-	int		diff;
-	
-	size = str.size();
-	diff = 10 - size;
-	while (diff > 0)
+	if (str.length() > 10)
 	{
-		std::cout << ' ';
-		diff--;
+		str = str.substr(0, 9);	
+		str = str + '.';
 	}
-	i = 0;
-	while (i < 10 && i < size)
-	{
-		if (i == 9)
-			std::cout << '.';
-		else
-			std::cout << str[i];
-		i++;
-	}
+	std::cout << std::setfill (' ') << std::setw (10);
+	std::cout << str;
 }
 
 int PhoneBook::getID()

@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/26 11:03:14 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/27 12:10:30 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ Fixed::Fixed( const Fixed &to_be_copied )
 	std::cout << "Copy constructor called" << std::endl;
 	
 	*this = to_be_copied;
+}
+
+Fixed::Fixed( const int arg )
+{
+	this->fixed_point_nbr = (arg << this->frac_bits); 
 }
 
 Fixed& Fixed::operator = ( const Fixed &to_be_copied ) // c = b

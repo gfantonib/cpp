@@ -6,11 +6,12 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/27 12:10:45 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/27 12:34:17 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -21,7 +22,9 @@ class Fixed
 	public:
 	Fixed( void );
 	Fixed( const Fixed &to_be_copied );
-	Fixed ( const int arg );
+	
+	Fixed ( const int inbr);
+	Fixed ( const float fnbr );
 	
 	Fixed &operator = ( const Fixed &to_be_copied );
 	~Fixed( void );

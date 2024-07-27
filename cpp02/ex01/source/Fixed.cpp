@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/27 12:10:30 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/27 12:34:39 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,20 @@ Fixed::Fixed( const Fixed &to_be_copied )
 	*this = to_be_copied;
 }
 
-Fixed::Fixed( const int arg )
+Fixed::Fixed( const int inbr )
 {
-	this->fixed_point_nbr = (arg << this->frac_bits); 
+	// This is like multiply by 256.
+	//  5  x    256    =    1280.
+	// 101 x 100000000 = 10100000000.
+	this->fixed_point_nbr = (inbr << this->frac_bits);
+}
+
+Fixed::Fixed ( const float fnbr )
+{
+	// This is exacly the same as multiply by 256.
+	// But I dont use bitwise directly because the float is stored in 
+	// a very specific manner.
+	this->fixed_point_nbr = roundf(fnbr * (1 << this->frac_bits));
 }
 
 Fixed& Fixed::operator = ( const Fixed &to_be_copied ) // c = b

@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/27 13:19:27 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/27 13:50:39 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,3 +79,9 @@ int Fixed::toInt( void ) const
 	return this->fixed_point_nbr >> this->frac_bits;
 }
 
+std::ostream& operator<<( std::ostream& out, const Fixed &fixed_point )
+{
+	out << fixed_point.toFloat();
+
+	return out;
+}

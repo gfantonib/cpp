@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/27 13:20:32 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/27 13:51:12 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(void)
     std::cout << b.getRawBits() << std::endl;
     std::cout << b.toFloat() << std::endl;
     std::cout << b.toInt() << std::endl;
+    std::cout << b << std::endl;
     
     return 0;
 }

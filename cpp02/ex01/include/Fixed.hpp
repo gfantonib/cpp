@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/27 13:18:37 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/27 13:49:56 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ class Fixed
 	float toFloat( void ) const;
 	int toInt( void ) const;
 	
-	Fixed &operator = ( const Fixed &to_be_copied );
+	Fixed& operator=( const Fixed &to_be_copied );
 };
+
+std::ostream& operator<<( std::ostream& out, const Fixed &fixed_point );

@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/27 12:34:17 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/27 13:06:33 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ class Fixed
 	public:
 	Fixed( void );
 	Fixed( const Fixed &to_be_copied );
-	
 	Fixed ( const int inbr);
 	Fixed ( const float fnbr );
-	
-	Fixed &operator = ( const Fixed &to_be_copied );
 	~Fixed( void );
-
+	
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
+	float toFloat( void ) const;
+	
+	Fixed &operator = ( const Fixed &to_be_copied );
 };

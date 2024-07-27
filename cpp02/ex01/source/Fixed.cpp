@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/27 12:34:39 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/27 13:14:47 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ Fixed::Fixed ( const float fnbr )
 	this->fixed_point_nbr = roundf(fnbr * (1 << this->frac_bits));
 }
 
+Fixed::~Fixed( void )
+{
+	std::cout << "Destructor called" << std::endl;
+}
+
 Fixed& Fixed::operator = ( const Fixed &to_be_copied ) // c = b
 {
 	std::cout << "Copy assignment operator called" << std::endl;
@@ -48,11 +53,6 @@ Fixed& Fixed::operator = ( const Fixed &to_be_copied ) // c = b
 	if (this != &to_be_copied)
 		this->fixed_point_nbr = to_be_copied.getRawBits();
 	return *this;
-}
-
-Fixed::~Fixed( void )
-{
-	std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits( void ) const // the function is a "const member function" and promises not to change the state of the object
@@ -68,3 +68,9 @@ void Fixed::setRawBits( int const raw )
 
 	this->fixed_point_nbr = raw;
 }
+
+float Fixed::toFloat( void ) const
+{
+	return ((float)this->fixed_point_nbr) / (1 << this->frac_bits);
+}
+

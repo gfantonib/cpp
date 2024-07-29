@@ -6,9 +6,12 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/27 13:49:56 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 18:55:29 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 #include <cmath>
@@ -35,3 +38,5 @@ class Fixed
 };
 
 std::ostream& operator<<( std::ostream& out, const Fixed &fixed_point );
+
+#endif

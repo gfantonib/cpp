@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/29 18:17:37 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 18:40:49 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void testDiv( void );
 void testIncrement( void );
 void testDecrement( void );
 void testMin( void );
-// void testMax( void );
+void testMax( void );
 
 int main(void) 
 {
@@ -57,7 +57,9 @@ int main(void)
     std::cout << std::endl;
 
     testMin();
-    // testMax();
+    std::cout << std::endl;
+    testMax();
+    std::cout << std::endl;
 
     return 0;
 }
@@ -299,26 +301,26 @@ void testMin( void )
     std::cout << std::endl;
 }
 
-// void testMin( void )
-// {
-//     std::cout << "testMax" << std::endl;
-//     Fixed a;
-//     Fixed b;
+void testMax( void )
+{
+    std::cout << "testMax" << std::endl;
+    Fixed a;
+    Fixed b;
     
-//     a = 10, b = 9;
-//     std::cout << "a = " << a << ", b = " << b << " | max = " << Fixed::max(a, b);
-//     std::cout << std::endl;
+    a = 10, b = 9;
+    std::cout << "a = " << a << ", b = " << b << " | max = " << Fixed::max(a, b);
+    std::cout << std::endl;
 
-//     a = 9, b = 9;
-//     std::cout << "a = " << a << ", b = " << b << " | max = " << Fixed::max(a, b);
-//     std::cout << std::endl;
+    a = 9, b = 9;
+    std::cout << "a = " << a << ", b = " << b << " | max = " << Fixed::max(a, b);
+    std::cout << std::endl;
 
-//     a = 9, b = 10;
-//     std::cout << "a = " << a << ", b = " << b << " | max = " << Fixed::max(a, b);
-//     std::cout << std::endl;
+    a = 9, b = 10;
+    std::cout << "a = " << a << ", b = " << b << " | max = " << Fixed::max(a, b);
+    std::cout << std::endl;
 
-//     a = 5.01f, b = 5.02f;
-//     std::cout << "a = " << a << ", b = " << b << " | max = " << Fixed::max(a, b);
-//     std::cout << std::endl;
-// }
+    a = 5.01f, b = 5.02f;
+    std::cout << "a = " << a << ", b = " << b << " | max = " << Fixed::max(a, b);
+    std::cout << std::endl;
+}
 

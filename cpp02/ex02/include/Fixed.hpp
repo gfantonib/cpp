@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/29 18:19:00 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 18:39:22 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ class Fixed
 	// static member functions
 	static Fixed& min( Fixed& left_arg, Fixed& right_arg);
 	static const Fixed& min( const Fixed& left_arg, const Fixed& right_arg);
-	
+	static Fixed& max( Fixed& left_arg, Fixed& right_arg);
+	static const Fixed& max( const Fixed& left_arg, const Fixed& right_arg);
 };
 
 // insertion operator

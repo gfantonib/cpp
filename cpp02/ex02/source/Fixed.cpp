@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/29 18:18:40 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 18:39:49 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,6 +176,20 @@ Fixed& Fixed::min( Fixed& left_arg, Fixed& right_arg)
 const Fixed& Fixed::min(  const Fixed& left_arg, const Fixed& right_arg)
 {
 	if (left_arg.getRawBits() < right_arg.getRawBits())
+		return left_arg;
+	return right_arg;
+}
+
+Fixed& Fixed::max( Fixed& left_arg, Fixed& right_arg)
+{
+	if (left_arg.getRawBits() > right_arg.getRawBits())
+		return left_arg;
+	return right_arg;
+}
+
+const Fixed& Fixed::max(  const Fixed& left_arg, const Fixed& right_arg)
+{
+	if (left_arg.getRawBits() > right_arg.getRawBits())
 		return left_arg;
 	return right_arg;
 }

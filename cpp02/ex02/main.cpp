@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/29 10:51:56 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 11:40:33 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void testBiggerEqual( void );
 void testSmallerEqual( void );
 void testEqual( void );
 void testNotEqual( void );
+void testPlus( void );
+void testMinus( void );
+void testMult( void );
+void testDiv( void );
 
 int main(void) 
 {
@@ -29,6 +33,10 @@ int main(void)
     testEqual();
     testNotEqual();
 
+    testPlus();
+    testMinus();
+    testMult();
+    testDiv();
     return 0;
 }
 
@@ -156,4 +164,68 @@ void testNotEqual( void )
         std::cout << "OK" << std::endl;
     else 
         std::cout << "KO" << std::endl;
+}
+
+void testPlus( void )
+{
+    std::cout << "testPlus" << std::endl;
+    Fixed a;
+    Fixed b;
+    
+    a = 10, b = 9;
+    std::cout << a << " + " << b << " = " << a + b << std::endl;
+
+    a = 5.01f, b = 5.02f;
+    std::cout << a << " + " << b << " = " << a + b << std::endl;
+
+    a = 10, b = 5.123f;
+    std::cout << a << " + " << b << " = " << a + b << std::endl;
+}
+
+void testMinus( void )
+{
+    std::cout << "testMinus" << std::endl;
+    Fixed a;
+    Fixed b;
+    
+    a = 10, b = 9;
+    std::cout << a << " - " << b << " = " << a - b << std::endl;
+
+    a = 5.02f, b = 5.01f;
+    std::cout << a << " - " << b << " = " << a - b << std::endl;
+
+    a = 10.123f, b = 5;
+    std::cout << a << " - " << b << " = " << a - b << std::endl;
+}
+
+void testMult( void )
+{
+    std::cout << "testMult" << std::endl;
+    Fixed a;
+    Fixed b;
+    
+    a = 10, b = 9;
+    std::cout << a << " * " << b << " = " << a * b << std::endl;
+
+    a = 5.02f, b = 5.01f;
+    std::cout << a << " * " << b << " = " << a * b << std::endl;
+
+    a = 2.5f, b = 2;
+    std::cout << a << " * " << b << " = " << a * b << std::endl;
+}
+
+void testDiv( void )
+{
+    std::cout << "testDiv" << std::endl;
+    Fixed a;
+    Fixed b;
+    
+    a = 18, b = 9;
+    std::cout << a << " / " << b << " = " << a / b << std::endl;
+
+    a = 10, b = 3;
+    std::cout << a << " / " << b << " = " << a / b << std::endl;
+
+    a = 2.5f, b = 10;
+    std::cout << a << " / " << b << " = " << a / b << std::endl;
 }

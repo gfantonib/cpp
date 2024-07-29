@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/29 10:48:10 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 11:37:35 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,18 @@ class Fixed
 	int toInt( void ) const;
 	
 	Fixed& operator = ( const Fixed &fixed_point );
+	
 	bool operator > ( const Fixed &right_arg );
 	bool operator < ( const Fixed &right_arg );
 	bool operator >= ( const Fixed &right_arg );
 	bool operator <= ( const Fixed &right_arg );
 	bool operator == ( const Fixed &right_arg );
 	bool operator != ( const Fixed &right_arg );
+	
+	float operator + ( const Fixed &right_arg );
+	float operator - ( const Fixed &right_arg );
+	float operator * ( const Fixed &right_arg );
+	float operator / ( const Fixed &right_arg );
 };
 
 std::ostream& operator<<( std::ostream& out, const Fixed &fixed_point );

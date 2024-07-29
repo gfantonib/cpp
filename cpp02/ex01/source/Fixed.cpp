@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/27 13:50:39 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 08:45:57 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Fixed::Fixed( const Fixed &to_be_copied )
 
 Fixed::Fixed( const int inbr )
 {
+	std::cout << "Int constructor called" << std::endl;
 	// This is like multiply by 256.
 	//  5  x    256    =    1280.
 	// 101 x 100000000 = 10100000000.
@@ -35,6 +36,7 @@ Fixed::Fixed( const int inbr )
 
 Fixed::Fixed ( const float fnbr )
 {
+	std::cout << "Float constructor called" << std::endl;
 	// This is exacly the same as multiply by 256.
 	// But I dont use bitwise directly because the float is stored in 
 	// a very specific manner.
@@ -46,26 +48,13 @@ Fixed::~Fixed( void )
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed& Fixed::operator = ( const Fixed &to_be_copied )
-{
-	std::cout << "Copy assignment operator called" << std::endl;
-	
-	if (this != &to_be_copied)
-		this->fixed_point_nbr = to_be_copied.getRawBits();
-	return *this;
-}
-
 int Fixed::getRawBits( void ) const // the function is a "const member function" and promises not to change the state of the object
 {
-	std::cout << "getRawBits member function called" << std::endl;
-
 	return this->fixed_point_nbr;
 }
 
 void Fixed::setRawBits( int const raw )
 {
-	std::cout << "setRawBits member function called" << std::endl;
-
 	this->fixed_point_nbr = raw;
 }
 
@@ -77,6 +66,15 @@ float Fixed::toFloat( void ) const
 int Fixed::toInt( void ) const
 {
 	return this->fixed_point_nbr >> this->frac_bits;
+}
+
+Fixed& Fixed::operator = ( const Fixed &to_be_copied )
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	
+	if (this != &to_be_copied)
+		this->fixed_point_nbr = to_be_copied.getRawBits();
+	return *this;
 }
 
 std::ostream& operator<<( std::ostream& out, const Fixed &fixed_point )

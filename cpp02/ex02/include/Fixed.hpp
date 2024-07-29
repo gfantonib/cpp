@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/29 18:39:22 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 18:45:02 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ class Fixed
 	bool operator != ( const Fixed &right_arg );
 	
 	// arithmetic operators
-	float operator + ( const Fixed &right_arg );
-	float operator - ( const Fixed &right_arg );
-	float operator * ( const Fixed &right_arg );
-	float operator / ( const Fixed &right_arg );
+	Fixed operator + ( const Fixed &right_arg );
+	Fixed operator - ( const Fixed &right_arg );
+	Fixed operator * ( const Fixed &right_arg );
+	Fixed operator / ( const Fixed &right_arg );
 	
 	// increment/decrement operators
 	Fixed operator ++ ( void );

@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/29 18:39:49 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 18:46:40 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,24 +118,24 @@ bool Fixed::operator != ( const Fixed &right_arg )
 }
 
 // arithmetic operators
-float Fixed::operator + ( const Fixed &right_arg )
+Fixed Fixed::operator + ( const Fixed &right_arg )
 {
-	return this->toFloat() + right_arg.toFloat();
+	return Fixed(this->toFloat() + right_arg.toFloat());
 }
 
-float Fixed::operator - ( const Fixed &right_arg )
+Fixed Fixed::operator - ( const Fixed &right_arg )
 {
-	return this->toFloat() - right_arg.toFloat();
+	return Fixed(this->toFloat() - right_arg.toFloat());
 }
 
-float Fixed::operator * ( const Fixed &right_arg )
+Fixed Fixed::operator * ( const Fixed &right_arg )
 {
-	return this->toFloat() * right_arg.toFloat();
+	return Fixed(this->toFloat() * right_arg.toFloat());
 }
 
-float Fixed::operator / ( const Fixed &right_arg )
+Fixed Fixed::operator / ( const Fixed &right_arg )
 {
-	return this->toFloat() / right_arg.toFloat();
+	return Fixed(this->toFloat() / right_arg.toFloat());
 }
 
 // increment/decrement operators

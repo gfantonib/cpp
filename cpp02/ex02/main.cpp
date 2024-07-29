@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/29 18:40:49 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 18:44:11 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void testMax( void );
 
 int main(void) 
 {
+    // comparison operators
     testBigger();
     std::cout << std::endl;
     testSmaller();
@@ -42,6 +43,7 @@ int main(void)
     testNotEqual();
     std::cout << std::endl;
 
+    // arithmetic operators
     testPlus();
     std::cout << std::endl;
     testMinus();
@@ -51,11 +53,13 @@ int main(void)
     testDiv();
     std::cout << std::endl;
     
+    // increment/decrement operatores
     testIncrement();
     std::cout << std::endl;
     testDecrement();
     std::cout << std::endl;
 
+    // max and min static member functions
     testMin();
     std::cout << std::endl;
     testMax();

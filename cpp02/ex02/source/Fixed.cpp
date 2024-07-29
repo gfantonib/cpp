@@ -6,12 +6,13 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/29 16:01:47 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 18:18:40 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+// constructors
 Fixed::Fixed( void )
 {
 	this->fixed_point_nbr = 0;
@@ -38,11 +39,13 @@ Fixed::Fixed ( const float fnbr )
 	this->fixed_point_nbr = roundf(fnbr * (1 << this->frac_bits));
 }
 
+// destructor
 Fixed::~Fixed( void )
 {
 	// std::cout << "Destructor called" << std::endl;
 }
 
+// member functions
 int Fixed::getRawBits( void ) const // the function is a "const member function" and promises not to change the state of the object
 {
 	return this->fixed_point_nbr;
@@ -63,6 +66,7 @@ int Fixed::toInt( void ) const
 	return this->fixed_point_nbr >> this->frac_bits;
 }
 
+// copy assignment operator
 Fixed& Fixed::operator = ( const Fixed &fixed_point )
 {
 	if (this != &fixed_point)
@@ -70,6 +74,7 @@ Fixed& Fixed::operator = ( const Fixed &fixed_point )
 	return *this;
 }
 
+// comparison operators
 bool Fixed::operator > ( const Fixed &right_arg )
 {
 	if (this->fixed_point_nbr > right_arg.fixed_point_nbr)
@@ -112,6 +117,7 @@ bool Fixed::operator != ( const Fixed &right_arg )
 	return 0;
 }
 
+// arithmetic operators
 float Fixed::operator + ( const Fixed &right_arg )
 {
 	return this->toFloat() + right_arg.toFloat();
@@ -132,6 +138,7 @@ float Fixed::operator / ( const Fixed &right_arg )
 	return this->toFloat() / right_arg.toFloat();
 }
 
+// increment/decrement operators
 Fixed Fixed::operator ++ ( void )
 {
 	this->fixed_point_nbr += 1;
@@ -158,6 +165,22 @@ Fixed Fixed::operator -- ( int )
 	return tmp;
 }
 
+// static member function
+Fixed& Fixed::min( Fixed& left_arg, Fixed& right_arg)
+{
+	if (left_arg.getRawBits() < right_arg.getRawBits())
+		return left_arg;
+	return right_arg;
+}
+
+const Fixed& Fixed::min(  const Fixed& left_arg, const Fixed& right_arg)
+{
+	if (left_arg.getRawBits() < right_arg.getRawBits())
+		return left_arg;
+	return right_arg;
+}
+
+// insertion operator
 std::ostream& operator<<( std::ostream& out, const Fixed &fixed_point )
 {
 	out << fixed_point.toFloat();

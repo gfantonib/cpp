@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/29 16:02:25 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 18:17:37 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,8 @@ void testMult( void );
 void testDiv( void );
 void testIncrement( void );
 void testDecrement( void );
-
-float findSmallestRep( void )
-{
-    float smallest = 0.1;
-    for (int i = 0; (1 + smallest > 1); i++)
-        smallest /= 10;
-    return smallest * 10;
-}
+void testMin( void );
+// void testMax( void );
 
 int main(void) 
 {
@@ -56,15 +50,14 @@ int main(void)
     std::cout << std::endl;
     testDiv();
     std::cout << std::endl;
-
-    float  smallest_representable = findSmallestRep();
-    std::cout << "smallest representable = " << smallest_representable << std::endl;
-    std::cout << std::endl;
     
     testIncrement();
     std::cout << std::endl;
     testDecrement();
     std::cout << std::endl;
+
+    testMin();
+    // testMax();
 
     return 0;
 }
@@ -282,3 +275,50 @@ void testDecrement( void )
     std::cout << a-- << std::endl;
     std::cout << a << std::endl;
 }
+
+void testMin( void )
+{
+    std::cout << "testMin" << std::endl;
+    Fixed a;
+    Fixed b;
+    
+    a = 10, b = 9;
+    std::cout << "a = " << a << ", b = " << b << " | min = " << Fixed::min(a, b);
+    std::cout << std::endl;
+
+    a = 9, b = 9;
+    std::cout << "a = " << a << ", b = " << b << " | min = " << Fixed::min(a, b);
+    std::cout << std::endl;
+
+    a = 9, b = 10;
+    std::cout << "a = " << a << ", b = " << b << " | min = " << Fixed::min(a, b);
+    std::cout << std::endl;
+
+    a = 5.01f, b = 5.02f;
+    std::cout << "a = " << a << ", b = " << b << " | min = " << Fixed::min(a, b);
+    std::cout << std::endl;
+}
+
+// void testMin( void )
+// {
+//     std::cout << "testMax" << std::endl;
+//     Fixed a;
+//     Fixed b;
+    
+//     a = 10, b = 9;
+//     std::cout << "a = " << a << ", b = " << b << " | max = " << Fixed::max(a, b);
+//     std::cout << std::endl;
+
+//     a = 9, b = 9;
+//     std::cout << "a = " << a << ", b = " << b << " | max = " << Fixed::max(a, b);
+//     std::cout << std::endl;
+
+//     a = 9, b = 10;
+//     std::cout << "a = " << a << ", b = " << b << " | max = " << Fixed::max(a, b);
+//     std::cout << std::endl;
+
+//     a = 5.01f, b = 5.02f;
+//     std::cout << "a = " << a << ", b = " << b << " | max = " << Fixed::max(a, b);
+//     std::cout << std::endl;
+// }
+

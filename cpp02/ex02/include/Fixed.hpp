@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/29 16:01:23 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 18:19:00 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,30 @@
 class Fixed
 {
 	private:
+	// atributes
 	int fixed_point_nbr;
 	static const int frac_bits = 8;
-	// static const float  smallest_representable = 1e-02f;
 	
 	public:
+	// constructors
 	Fixed( void );
 	Fixed( const Fixed &to_be_copied );
 	Fixed ( const int inbr);
 	Fixed ( const float fnbr );
+
+	// destructor
 	~Fixed( void );
 	
+	// member functions
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
 	float toFloat( void ) const;
 	int toInt( void ) const;
 	
+	// copy assignment operator
 	Fixed& operator = ( const Fixed &fixed_point );
 	
+	// comparison operators
 	bool operator > ( const Fixed &right_arg );
 	bool operator < ( const Fixed &right_arg );
 	bool operator >= ( const Fixed &right_arg );
@@ -44,17 +50,25 @@ class Fixed
 	bool operator == ( const Fixed &right_arg );
 	bool operator != ( const Fixed &right_arg );
 	
+	// arithmetic operators
 	float operator + ( const Fixed &right_arg );
 	float operator - ( const Fixed &right_arg );
 	float operator * ( const Fixed &right_arg );
 	float operator / ( const Fixed &right_arg );
 	
+	// increment/decrement operators
 	Fixed operator ++ ( void );
 	Fixed operator ++ ( int );
 	Fixed operator -- ( void );
 	Fixed operator -- ( int );
+
+	// static member functions
+	static Fixed& min( Fixed& left_arg, Fixed& right_arg);
+	static const Fixed& min( const Fixed& left_arg, const Fixed& right_arg);
+	
 };
 
+// insertion operator
 std::ostream& operator<<( std::ostream& out, const Fixed &fixed_point );
 
 #endif

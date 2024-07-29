@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/29 11:38:02 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 16:01:47 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,32 @@ float Fixed::operator * ( const Fixed &right_arg )
 float Fixed::operator / ( const Fixed &right_arg )
 {
 	return this->toFloat() / right_arg.toFloat();
+}
+
+Fixed Fixed::operator ++ ( void )
+{
+	this->fixed_point_nbr += 1;
+	return *this;
+}
+
+Fixed Fixed::operator ++ ( int )
+{
+	Fixed tmp(*this); 
+	this->fixed_point_nbr += 1;
+	return tmp;
+}
+
+Fixed Fixed::operator -- ( void )
+{
+	this->fixed_point_nbr -= 1;
+	return *this;
+}
+
+Fixed Fixed::operator -- ( int )
+{
+	Fixed tmp(*this); 
+	this->fixed_point_nbr -= 1;
+	return tmp;
 }
 
 std::ostream& operator<<( std::ostream& out, const Fixed &fixed_point )

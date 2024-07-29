@@ -6,9 +6,12 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/29 11:37:35 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/07/29 16:01:23 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 #include <cmath>
@@ -18,6 +21,7 @@ class Fixed
 	private:
 	int fixed_point_nbr;
 	static const int frac_bits = 8;
+	// static const float  smallest_representable = 1e-02f;
 	
 	public:
 	Fixed( void );
@@ -44,6 +48,13 @@ class Fixed
 	float operator - ( const Fixed &right_arg );
 	float operator * ( const Fixed &right_arg );
 	float operator / ( const Fixed &right_arg );
+	
+	Fixed operator ++ ( void );
+	Fixed operator ++ ( int );
+	Fixed operator -- ( void );
+	Fixed operator -- ( int );
 };
 
 std::ostream& operator<<( std::ostream& out, const Fixed &fixed_point );
+
+#endif

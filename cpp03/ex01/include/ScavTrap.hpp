@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 17:39:21 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/02 09:36:53 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/02 10:56:49 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ class ScavTrap : public ClapTrap // Inherit the ClapTrap class.
 	ScavTrap( void ); // Default constructor
 	ScavTrap( std::string arg ); // String arg constructor
 	ScavTrap( const ScavTrap &to_be_copied ); // Copy constructor
-	~ScavTrap();
+	~ScavTrap(); // Destructor.
+
+	// Member functions
+	void attack( const std::string& target );
+	void guardGate( void );
 };
 
 #endif

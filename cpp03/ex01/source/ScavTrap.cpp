@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 08:19:13 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/02 09:39:13 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/02 10:58:09 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,30 @@ ScavTrap::ScavTrap( std::string arg ) : ClapTrap( arg )
 	this->attack_damage = 20;
 }
 
+// Copy Constructor
 ScavTrap::ScavTrap( const ScavTrap &to_be_copied ) : ClapTrap( to_be_copied )
 {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
+// Destructor
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called" << std::endl;
+}
+
+// Member functions
+void ScavTrap::attack(const std::string& target)
+{
+	if (isDead() || isWeek())
+		return;
+	this->energy_points--;
+	std::cout << "ScavTrap " << this->name << " attacks "
+	<< target << " causing " << this->attack_damage << " points of damage!"
+	<< std::endl;
+}
+
+void ScavTrap::guardGate( void )
+{
+	std::cout << "ScavTrap is now in Gate keeper mode." << std::endl;
 }

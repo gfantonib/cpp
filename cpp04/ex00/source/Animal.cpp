@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/02 18:49:39 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/03 09:45:21 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,12 @@ Animal::~Animal( void )
 }
 
 // Member functions
-void Animal::makeSound( void )
+void Animal::makeSound( void ) const
 {
 	std::cout << "ernst! ernst! ernst!" << std::endl;
+}
+
+std::string Animal::getType( void ) const
+{
+	return this->type;
 }

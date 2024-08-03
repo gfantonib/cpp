@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/02 18:41:48 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/03 09:45:14 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ class Animal
 	~Animal();
 
 	// Member functions
-	virtual void makeSound( void );
+	virtual void makeSound( void ) const;
+	std::string getType( void ) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/02 18:54:41 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/03 09:40:39 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Cat : public Animal
 	~Cat(); // Destructor
 
 	// Member functions
-	void makeSound( void );
+	void makeSound( void ) const;
 };
 
 #endif

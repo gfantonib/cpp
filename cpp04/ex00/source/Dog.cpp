@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/02 18:52:06 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/03 09:40:33 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Dog::~Dog( void ) {}
 // }
 
 // Member functions
-void Dog::makeSound( void )
+void Dog::makeSound( void ) const
 {
 	std::cout << "woof! woof! woof! mother fucker!" << std::endl;
 }

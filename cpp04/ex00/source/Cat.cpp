@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/02 18:55:35 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/03 09:40:52 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Cat::~Cat( void ) {}
 // }
 
 // Member functions
-void Cat::makeSound( void )
+void Cat::makeSound( void ) const
 {
 	std::cout << "miaw! miaw! miaw! fuck you!" << std::endl;
 }

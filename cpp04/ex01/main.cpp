@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/05 11:36:33 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/05 20:12:11 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@
 int main( void )
 {
 	Cat a;
-	a.setIdeas("fish");
-	a.showIdeas();
+	a.setID( 12 );
+	a.showID();
 	
 	Cat b;
-	b.showIdeas();
 	b = a;
-	b.showIdeas();
+	b.showID();
+	b.setID( 21 );
+	b.showID();
+	a.showID();
 	
 	
 	// Animal* animals[100];

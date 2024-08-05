@@ -6,16 +6,17 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/05 10:20:49 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/05 19:07:36 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 // Constructors
-Dog::Dog( void ) : Animal(), Brain()
+Dog::Dog( void ) : Animal()
 {
 	std::cout << "Dog default costructor called!" << std::endl;
+	this->id = -1;
 	this->type = "Dog";
 }
 
@@ -25,7 +26,7 @@ Dog::Dog( std::string arg ) : Animal ( arg )
 	this->type = "Dog";
 }
 
-Dog::Dog( const Dog &to_be_copied ) : Animal( to_be_copied ), Brain( to_be_copied )
+Dog::Dog( const Dog &to_be_copied ) : Animal( to_be_copied )
 {
 	std::cout << "Dog copy costructor called!" << std::endl;
 }
@@ -51,4 +52,14 @@ Dog::~Dog( void )
 void Dog::makeSound( void ) const
 {
 	std::cout << "woof! woof! woof! mother fucker!" << std::endl;
+}
+
+void Dog::setID( int nbr )
+{
+	this->id = nbr;
+}
+
+void Dog::showID( void )
+{
+	std::cout << this->id << std::endl;
 }

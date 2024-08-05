@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/05 10:21:19 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/05 19:13:48 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
-#include "Brain.hpp"
 
-class Dog : public Animal, public Brain
+class Dog : public Animal
 {
 	private:
 	std::string type;
+	int id;
 	
 	public:
 	Dog( void ); // Default constructor
@@ -30,6 +30,8 @@ class Dog : public Animal, public Brain
 
 	// Member functions
 	void makeSound( void ) const;
+	void setID( int nbr );
+	void showID( void );
 };
 
 #endif

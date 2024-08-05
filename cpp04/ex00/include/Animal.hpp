@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/03 09:45:14 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/05 08:17:31 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Animal
 	Animal &operator = ( const Animal &to_be_copied ); // Copy assignment opertor
 
 	// Destructor
-	~Animal();
+	virtual ~Animal();
 
 	// Member functions
 	virtual void makeSound( void ) const;

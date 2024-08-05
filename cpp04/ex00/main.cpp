@@ -6,15 +6,18 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/05 08:14:22 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/05 08:44:17 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 void MainTest( void );
+void WrongMainTest( void );
 void AnimalConstructorTest( void );
 void AnimalTest( void );
 void DogConstructorTest( void );
@@ -26,6 +29,8 @@ int main( void )
 {
 	std::cout << "-----------------------" << std::endl;
 	MainTest();
+	std::cout << "-----------------------" << std::endl;
+	WrongMainTest();
 	std::cout << "-----------------------" << std::endl;
 	AnimalConstructorTest();
 	std::cout << "-----------------------" << std::endl;
@@ -117,5 +122,14 @@ void MainTest( void )
 	meta->makeSound();
 	delete meta;
 	delete j;
+	delete i;
+}
+
+void WrongMainTest( void )
+{
+	std::cout << "WrongMainTest:" << std::endl << std::endl;
+	const WrongAnimal* i = new WrongCat();
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
 	delete i;
 }

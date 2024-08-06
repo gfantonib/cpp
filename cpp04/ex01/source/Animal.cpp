@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/05 10:04:54 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 11:14:30 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 Animal::Animal( void )
 {
 	std::cout << "Animal default constructor called" << std::endl;
-	this->type = "Generic Animal";
+	this->getType("Generic Animal");
 }
 
 Animal::Animal( std::string arg )
 {
 	std::cout << "Animal string arg constructor called" << std::endl;
-	this->type = arg;
+	this->getType(arg);
 }
 
 Animal::Animal( const Animal &to_be_copied )
@@ -38,7 +38,7 @@ Animal& Animal::operator = ( const Animal &to_be_copied )
 	
 	if (this != &to_be_copied)
 	{
-		this->type = to_be_copied.type;
+		this->getType(to_be_copied.type);
 	}
 	return *this;
 }
@@ -53,6 +53,11 @@ Animal::~Animal( void )
 void Animal::makeSound( void ) const
 {
 	std::cout << "ernst! ernst! ernst!" << std::endl;
+}
+
+void Animal::getType( std::string str )
+{
+	this->type = str;
 }
 
 std::string Animal::getType( void ) const

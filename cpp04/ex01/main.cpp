@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/06 14:39:22 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 14:45:28 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 void subjectTest( void );
 void arrayTest( void );
 void copyTest( void );
+void newCopyTest( void );
 
 int main( void )
 {
@@ -25,6 +26,8 @@ int main( void )
 	arrayTest();
 	std::cout << "-----------------------" << std::endl;
 	copyTest();
+	std::cout << "-----------------------" << std::endl;
+	newCopyTest();
 }
 
 void subjectTest( void )
@@ -70,4 +73,13 @@ void copyTest( void )
 
 	Cat c(a);
 	c.showBrain();
+}
+
+void newCopyTest( void )
+{
+	std::cout << "newCopyTest" << std::endl << std::endl;
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
 }

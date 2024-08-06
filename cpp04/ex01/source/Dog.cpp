@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/06 14:29:38 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 14:47:36 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Dog::Dog( const Dog &to_be_copied ) : Animal( to_be_copied )
 // Copy assignment operator
 Dog& Dog::operator = ( const Dog &to_be_copied )
 {
-	std::cout << "Copy assignment operator called." << std::endl;
+	std::cout << "Dog copy assignment operator called." << std::endl;
 	
 	if (this != &to_be_copied)
 	{

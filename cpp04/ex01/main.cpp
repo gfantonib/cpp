@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/06 14:45:28 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 15:13:36 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void subjectTest( void )
 	std::cout << "subjectTest" << std::endl << std::endl; 
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
+	// If Base's destructor was not virtual with b beeing a Base* 
+	// pointing to a Derived object, delete b would have undefined behaviour:
 	delete j; //should not create a leak
 	delete i;
 }

@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/05 19:06:40 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 10:09:19 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,17 @@ Cat::~Cat( void )
 	std::cout << "Cat destructor called!" << std::endl;
 }
 
-// Cat& Cat::operator = ( const Cat &to_be_copied )
-// {
-// 	std::cout << "Copy assignment operator called" << std::endl;
+Cat& Cat::operator = ( const Cat &to_be_copied )
+{
+	std::cout << "Cat copy assignment operator called" << std::endl;
 	
-// 	if (this != &to_be_copied)
-// 	{
-// 		this->type = to_be_copied.type;
-// 	}
-// 	return *this;
-// }
+	if (this != &to_be_copied)
+	{
+		Animal::operator=(to_be_copied);
+		this->id = to_be_copied.id;
+	}
+	return *this;
+}
 
 // Member functions
 void Cat::makeSound( void ) const

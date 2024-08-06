@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/05 19:13:40 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 10:02:07 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class Cat : public Animal
 	Cat( void ); // Default constructor
 	Cat( std::string arg ); // String arg constructor
 	Cat( const Cat &to_be_copied ); // Copy constructor
+	Cat &operator = ( const Cat &to_be_copied ); // Copy assignment opertor
+
 	
 	~Cat(); // Destructor
 

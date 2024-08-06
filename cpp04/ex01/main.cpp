@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/05 20:12:11 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 10:08:41 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,20 @@
 
 int main( void )
 {
-	Cat a;
+	Cat a("hunter");
+	Cat b("homo");
 	a.setID( 12 );
 	a.showID();
-	
-	Cat b;
+	std::cout << a.getType() << std::endl;
+
+	b.showID();
+	std::cout << b.getType() << std::endl;
+
 	b = a;
-	b.showID();
-	b.setID( 21 );
-	b.showID();
-	a.showID();
 	
-	
+	b.showID();
+	std::cout << b.getType() << std::endl;
+
 	// Animal* animals[100];
 	// for (int i = 0; i < 100; i++)
 	// {

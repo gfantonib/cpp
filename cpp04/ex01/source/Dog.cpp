@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/05 19:07:36 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 10:12:15 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,17 @@ Dog::~Dog( void )
 	std::cout << "Dog destructor called!" << std::endl;
 }
 
-// Dog& Dog::operator = ( const Dog &to_be_copied )
-// {
-// 	std::cout << "Copy assignment operator called" << std::endl;
+Dog& Dog::operator = ( const Dog &to_be_copied )
+{
+	std::cout << "Copy assignment operator called" << std::endl;
 	
-// 	if (this != &to_be_copied)
-// 	{
-// 		this->type = to_be_copied.type;
-// 	}
-// 	return *this;
-// }
+	if (this != &to_be_copied)
+	{
+		Animal::operator=(to_be_copied);
+		this->type = to_be_copied.type;
+	}
+	return *this;
+}
 
 // Member functions
 void Dog::makeSound( void ) const

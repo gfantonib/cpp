@@ -6,20 +6,20 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/06 12:06:38 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 13:58:04 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-// Constructors
+// Default constructors
 Cat::Cat( void ) : Animal()
 {
 	std::cout << "Cat default costructor called!" << std::endl;
 	this->getType("Cat");
 	this->brain = new Brain();
 }
-
+// String constructor
 Cat::Cat( std::string arg ) : Animal( arg )
 {
 	std::cout << "Cat string arg costructor called!" << std::endl;
@@ -27,6 +27,7 @@ Cat::Cat( std::string arg ) : Animal( arg )
 	this->brain = new Brain();
 }
 
+// Copy constructor
 Cat::Cat( const Cat &to_be_copied ) : Animal( to_be_copied )
 {
 	std::cout << "Cat Copy costructor called!" << std::endl;
@@ -34,13 +35,7 @@ Cat::Cat( const Cat &to_be_copied ) : Animal( to_be_copied )
 	*this = to_be_copied;
 }
 
-// Destructor
-Cat::~Cat( void )
-{
-	std::cout << "Cat destructor called!" << std::endl;
-	delete this->brain;
-}
-
+// Copy assignment operator
 Cat& Cat::operator = ( const Cat &to_be_copied )
 {
 	std::cout << "Cat copy assignment operator called" << std::endl;
@@ -50,6 +45,13 @@ Cat& Cat::operator = ( const Cat &to_be_copied )
 		*this->brain = *to_be_copied.brain;
 	}
 	return *this;
+}
+
+// Destructor
+Cat::~Cat( void )
+{
+	std::cout << "Cat destructor called!" << std::endl;
+	delete this->brain;
 }
 
 // Member functions

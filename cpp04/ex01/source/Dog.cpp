@@ -6,47 +6,53 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/06 10:12:15 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 14:00:37 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-// Constructors
+// Default constructors
 Dog::Dog( void ) : Animal()
 {
 	std::cout << "Dog default costructor called!" << std::endl;
-	this->id = -1;
-	this->type = "Dog";
+	this->getType("Dog");
+	this->brain = new Brain();
 }
 
+// String constructor
 Dog::Dog( std::string arg ) : Animal ( arg )
 {
 	std::cout << "Dog string arg costructor called!" << std::endl;
-	this->type = "Dog";
+	this->getType("Dog");
+	this->brain = new Brain();
 }
 
+// Copy constructor
 Dog::Dog( const Dog &to_be_copied ) : Animal( to_be_copied )
 {
 	std::cout << "Dog copy costructor called!" << std::endl;
+	this->brain = new Brain();
+	*this = to_be_copied;
 }
 
-// Destructor
-Dog::~Dog( void ) 
-{
-	std::cout << "Dog destructor called!" << std::endl;
-}
-
+// Copy assignment operator
 Dog& Dog::operator = ( const Dog &to_be_copied )
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	
 	if (this != &to_be_copied)
 	{
-		Animal::operator=(to_be_copied);
-		this->type = to_be_copied.type;
+		*this->brain = *to_be_copied.brain;
 	}
 	return *this;
+}
+
+// Destructor
+Dog::~Dog( void ) 
+{
+	std::cout << "Dog destructor called!" << std::endl;
+	delete this->brain;
 }
 
 // Member functions
@@ -55,12 +61,12 @@ void Dog::makeSound( void ) const
 	std::cout << "woof! woof! woof! mother fucker!" << std::endl;
 }
 
-void Dog::setID( int nbr )
+void Dog::setBrain( std::string idea )
 {
-	this->id = nbr;
+	this->brain->setIdeas( idea );
 }
 
-void Dog::showID( void )
+void Dog::showBrain( void )
 {
-	std::cout << this->id << std::endl;
+	this->brain->showIdeas();
 }

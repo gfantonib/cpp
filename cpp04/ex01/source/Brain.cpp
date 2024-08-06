@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/05 10:11:50 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 14:28:52 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // Constructors
 Brain::Brain( void )
 {
-	std::cout << "Brain default constructor called" << std::endl;
+	std::cout << "Brain default constructor called." << std::endl;
 }
 
 // Brain::Brain( std::string arg )
@@ -26,14 +26,14 @@ Brain::Brain( void )
 
 Brain::Brain( const Brain &to_be_copied )
 {
-	std::cout << "Brain copy constructor called" << std::endl;
+	std::cout << "Brain copy constructor called." << std::endl;
 	
 	*this = to_be_copied;
 }
 
 Brain& Brain::operator = ( const Brain &to_be_copied )
 {
-	std::cout << "Brain copy assignment operator called" << std::endl;
+	std::cout << "Brain copy assignment operator called." << std::endl;
 	
 	if (this != &to_be_copied)
 	{
@@ -45,7 +45,7 @@ Brain& Brain::operator = ( const Brain &to_be_copied )
 // Destructor
 Brain::~Brain( void )
 {
-	std::cout << "Brain destructor called" << std::endl;
+	std::cout << "Brain destructor called." << std::endl;
 }
 
 // Member functions
@@ -65,13 +65,3 @@ void Brain::showIdeas( void )
 	}
 	std::cout << std::endl;
 }
-
-// void Brain::makeSound( void ) const
-// {
-// 	std::cout << "ernst! ernst! ernst!" << std::endl;
-// }
-
-// std::string Brain::getType( void ) const
-// {
-// 	return this->type;
-// }

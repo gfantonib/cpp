@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/06 11:14:30 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 14:28:32 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,26 @@
 // Constructors
 Animal::Animal( void )
 {
-	std::cout << "Animal default constructor called" << std::endl;
+	std::cout << "Animal default constructor called." << std::endl;
 	this->getType("Generic Animal");
 }
 
 Animal::Animal( std::string arg )
 {
-	std::cout << "Animal string arg constructor called" << std::endl;
+	std::cout << "Animal string arg constructor called." << std::endl;
 	this->getType(arg);
 }
 
 Animal::Animal( const Animal &to_be_copied )
 {
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << "Animal copy constructor called." << std::endl;
 	
 	*this = to_be_copied;
 }
 
 Animal& Animal::operator = ( const Animal &to_be_copied )
 {
-	std::cout << "Animal copy assignment operator called" << std::endl;
+	std::cout << "Animal copy assignment operator called." << std::endl;
 	
 	if (this != &to_be_copied)
 	{
@@ -46,7 +46,7 @@ Animal& Animal::operator = ( const Animal &to_be_copied )
 // Destructor
 Animal::~Animal( void )
 {
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << "Animal destructor called." << std::endl;
 }
 
 // Member functions

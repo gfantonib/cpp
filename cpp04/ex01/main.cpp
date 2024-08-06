@@ -6,41 +6,64 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/06 12:03:21 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 14:25:50 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Cat.hpp"
 
+void subjectTest( void );
+void arrayTest( void );
+void copyTest( void );
+
 int main( void )
 {
+	std::cout << "-----------------------" << std::endl;
+	subjectTest();
+	std::cout << "-----------------------" << std::endl;
+	arrayTest();
+	std::cout << "-----------------------" << std::endl;
+	copyTest();
+}
+
+void subjectTest( void )
+{
+	std::cout << "subjectTest" << std::endl << std::endl; 
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete j; //should not create a leak
+	delete i;
+}
+
+void arrayTest( void )
+{
+	std::cout << "arrayTest" << std::endl << std::endl;
+	Animal* animals[4];
+	for (int i = 0; i < 4; i++)
+	{
+		if (i < 2)
+			animals[i] = new Dog;
+		else
+			animals[i] = new Cat;
+		std::cout << animals[i]->getType() << std::endl;
+	}
+	for (int i = 0; i < 4; i++)
+		delete animals[i];
+}
+
+void copyTest( void )
+{
+	std::cout << "copyTest" << std::endl << std::endl;
 	Cat a;
-	
-	std::cout << a.getType() << std::endl;
 	a.setBrain("fish");
 	a.showBrain();
 
 	Cat b;
-	std::cout << b.getType() << std::endl;
 	b.showBrain();
 	b = a;
-	std::cout << b.getType() << std::endl;
 	b.showBrain();
 
 	Cat c(a);
-	// std::cout << c.getType() << std::endl;
-	// c.showBrain();
-
-	// Animal* animals[100];
-	// for (int i = 0; i < 100; i++)
-	// {
-	// 	if (i < 50)
-	// 		animals[i] = new Dog;
-	// 	else
-	// 		animals[i] = new Cat;
-	// }
-	// animals[1]->getType();
-	// for (int i = 0; i < 100; i++)
-	// 	delete animals[i];
+	c.showBrain();
 }

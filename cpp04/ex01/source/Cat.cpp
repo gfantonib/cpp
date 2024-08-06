@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/06 14:29:13 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 14:37:23 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Cat::Cat( void ) : Animal()
 	this->getType("Cat");
 	this->brain = new Brain();
 }
+
 // String constructor
 Cat::Cat( std::string arg ) : Animal( arg )
 {

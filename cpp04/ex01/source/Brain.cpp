@@ -6,24 +6,33 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/06 14:28:52 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 14:36:35 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-// Constructors
+// Default constructor
 Brain::Brain( void )
 {
 	std::cout << "Brain default constructor called." << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		this->ideas[i] = "noIdea";
+	}
 }
 
-// Brain::Brain( std::string arg )
-// {
-// 	std::cout << "String arg constructor called" << std::endl;
-// 	this->type = arg;
-// }
+// String constructor
+Brain::Brain( std::string arg )
+{
+	std::cout << "Brain string constructor called." << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		this->ideas[i] = arg;
+	}
+}
 
+// Copy constructor
 Brain::Brain( const Brain &to_be_copied )
 {
 	std::cout << "Brain copy constructor called." << std::endl;
@@ -31,6 +40,7 @@ Brain::Brain( const Brain &to_be_copied )
 	*this = to_be_copied;
 }
 
+// Copy assignment operator
 Brain& Brain::operator = ( const Brain &to_be_copied )
 {
 	std::cout << "Brain copy assignment operator called." << std::endl;

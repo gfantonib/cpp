@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/06 11:43:14 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 12:03:21 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int main( void )
 	b.showBrain();
 
 	Cat c(a);
-	std::cout << c.getType() << std::endl;
-	c.showBrain();
+	// std::cout << c.getType() << std::endl;
+	// c.showBrain();
 
 	// Animal* animals[100];
 	// for (int i = 0; i < 100; i++)

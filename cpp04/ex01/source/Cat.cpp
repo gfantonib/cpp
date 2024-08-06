@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/06 11:44:45 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 12:06:38 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ Cat::Cat( std::string arg ) : Animal( arg )
 Cat::Cat( const Cat &to_be_copied ) : Animal( to_be_copied )
 {
 	std::cout << "Cat Copy costructor called!" << std::endl;
+	this->brain = new Brain();
 	*this = to_be_copied;
 }
 

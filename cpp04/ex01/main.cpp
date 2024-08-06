@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/06 14:25:50 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 14:39:22 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,14 @@ void copyTest( void )
 	a.setBrain("fish");
 	a.showBrain();
 
+	std::cout << std::endl;
+
 	Cat b;
 	b.showBrain();
 	b = a;
 	b.showBrain();
+
+	std::cout << std::endl;
 
 	Cat c(a);
 	c.showBrain();

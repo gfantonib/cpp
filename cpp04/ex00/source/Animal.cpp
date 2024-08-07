@@ -6,35 +6,37 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/05 08:17:20 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:31:20 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-// Constructors
+// Default constructor
 Animal::Animal( void )
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Animal default constructor called" << std::endl;
 	this->type = "Generic Animal";
 }
 
+// String constructor
 Animal::Animal( std::string arg )
 {
-	std::cout << "String arg constructor called" << std::endl;
+	std::cout << "Animal string constructor called" << std::endl;
 	this->type = arg;
 }
 
+// Copy constructor
 Animal::Animal( const Animal &to_be_copied )
 {
-	std::cout << "Copy constructor called" << std::endl;
-	
-	*this = to_be_copied;
+	std::cout << "Animal copy constructor called" << std::endl;
+	this->type = to_be_copied.type;
 }
 
+// Copy assignment operator
 Animal& Animal::operator = ( const Animal &to_be_copied )
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Animal copy assignment operator called" << std::endl;
 	
 	if (this != &to_be_copied)
 	{
@@ -46,13 +48,18 @@ Animal& Animal::operator = ( const Animal &to_be_copied )
 // Destructor
 Animal::~Animal( void )
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 }
 
 // Member functions
 void Animal::makeSound( void ) const
 {
 	std::cout << "ernst! ernst! ernst!" << std::endl;
+}
+
+void Animal::setType( std::string str )
+{
+	this->type = str;
 }
 
 std::string Animal::getType( void ) const

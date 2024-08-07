@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/05 08:44:17 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:44:07 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,31 @@ int main( void )
 	std::cout << "-----------------------" << std::endl;
 	CatTest();
 	std::cout << "-----------------------" << std::endl;
+}
+
+void MainTest( void )
+{
+	std::cout << "MainTest:" << std::endl << std::endl;
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+	delete meta;
+	delete j;
+	delete i;
+}
+
+void WrongMainTest( void )
+{
+	std::cout << "WrongMainTest:" << std::endl << std::endl;
+	const WrongAnimal* i = new WrongCat();
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	delete i;
 }
 
 void AnimalConstructorTest( void )
@@ -107,29 +132,4 @@ void CatTest( void )
 
 	a2.makeSound();
 	b2.makeSound();
-}
-
-void MainTest( void )
-{
-	std::cout << "MainTest:" << std::endl << std::endl;
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	delete meta;
-	delete j;
-	delete i;
-}
-
-void WrongMainTest( void )
-{
-	std::cout << "WrongMainTest:" << std::endl << std::endl;
-	const WrongAnimal* i = new WrongCat();
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	delete i;
 }

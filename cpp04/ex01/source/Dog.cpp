@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/06 14:47:36 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:48:43 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 Dog::Dog( void ) : Animal()
 {
 	std::cout << "Dog default costructor called." << std::endl;
-	this->getType("Dog");
+	this->setType("Dog");
 	this->brain = new Brain();
 }
 
 // String constructor
 Dog::Dog( std::string arg ) : Animal ( arg )
 {
-	std::cout << "Dog string arg costructor called." << std::endl;
-	this->getType("Dog");
+	std::cout << "Dog string costructor called." << std::endl;
+	this->setType("Dog");
 	this->brain = new Brain();
 }
 
@@ -43,6 +43,7 @@ Dog& Dog::operator = ( const Dog &to_be_copied )
 	
 	if (this != &to_be_copied)
 	{
+		this->setType(to_be_copied.getType());
 		*this->brain = *to_be_copied.brain;
 	}
 	return *this;

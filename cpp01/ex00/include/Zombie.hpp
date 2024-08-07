@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 19:45:52 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/12 19:46:03 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/07 17:45:32 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class Zombie
 		std::string name;
 		
 	public:
-		// Zombie(void);
 		Zombie(std::string name); // default constructor
 		~Zombie(void); // destructor
 		void announce(void);

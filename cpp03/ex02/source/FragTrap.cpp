@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 08:19:13 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/02 14:51:11 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:08:54 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,18 @@ FragTrap::FragTrap( std::string arg ) : ClapTrap( arg )
 FragTrap::FragTrap( const FragTrap &to_be_copied ) : ClapTrap( to_be_copied )
 {
 	std::cout << "FragTrap copy constructor called" << std::endl;
+}
+
+// Copy assignment operator
+FragTrap& FragTrap::operator = ( const FragTrap &to_be_copied )
+{
+	std::cout << "FragTrap copy assignment operator called" << std::endl;
+	
+	if (this != &to_be_copied)
+	{
+		*this = to_be_copied;
+	}
+	return *this;
 }
 
 // Destructor

@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/20 10:07:00 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/07 19:25:09 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ void ReplacePattern(std::ifstream &src_file, std::ofstream &out_file, std::strin
 		start = line.find(s1);
 		while (start != std::string::npos)
 		{
+			if (s1 == s2)
+				break;
 			line.erase(start, s1_len);
 			line.insert(start, s2);
 			start = line.find(s1);

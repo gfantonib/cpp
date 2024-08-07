@@ -6,11 +6,9 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/12 19:02:04 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/07 19:07:38 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// #include "Weapon.hpp"
 
 #include "HumanA.hpp"
 #include "HumanB.hpp"
@@ -26,8 +24,8 @@
 // 	helio.attack();
 // 	helio.setWeapon(knive);
 // 	helio.attack();
-// 	return (0);
 // }
+
 int main()
 {
 	{

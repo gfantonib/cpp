@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/26 10:54:51 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:37:25 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 int main( void ) 
 {
 	Fixed a;
+
+	a.setRawBits( 42 );
+	
 	Fixed b( a );
 	Fixed c;
 

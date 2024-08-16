@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/07/29 18:55:08 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:39:41 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Fixed
 	static const int nbr_frac_bits = 8;
 	
 	public:
-	Fixed( void );
-	Fixed( const Fixed &to_be_copied );
-	Fixed &operator = ( const Fixed &to_be_copied );
-	~Fixed( void );
+	Fixed( void ); // default constructor
+	Fixed( const Fixed &to_be_copied ); // copy constructor
+	Fixed &operator = ( const Fixed &to_be_copied ); //copy assignment operator
+	~Fixed( void ); //destructor
 
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );

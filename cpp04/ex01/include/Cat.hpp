@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/06 13:53:30 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/17 15:16:50 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Cat : public Animal
 	Cat( std::string arg ); // String constructor
 	Cat( const Cat &to_be_copied ); // Copy constructor
 	Cat &operator = ( const Cat &to_be_copied ); // Copy assignment opertor
-	~Cat(); // Destructor
+	virtual ~Cat(); // Destructor
 
 	// Member functions
 	void makeSound( void ) const;

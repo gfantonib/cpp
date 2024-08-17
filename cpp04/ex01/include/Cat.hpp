@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/17 15:16:50 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/17 15:23:53 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Cat : public Animal
 	void makeSound( void ) const;
 	void setBrain( std::string idea );
 	void showBrain( void );
+	void showBrainMem( void );
 };
 
 #endif

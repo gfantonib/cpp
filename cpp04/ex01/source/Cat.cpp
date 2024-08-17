@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/07 14:48:46 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/17 15:24:12 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,9 @@ void Cat::setBrain( std::string idea )
 void Cat::showBrain( void )
 {
 	this->brain->showIdeas();
+}
+
+void Cat::showBrainMem( void )
+{
+	std::cout << this->brain << std::endl;
 }

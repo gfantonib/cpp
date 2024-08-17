@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/07 14:44:07 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/17 15:00:08 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,9 @@ void WrongMainTest( void )
 	std::cout << "WrongMainTest:" << std::endl << std::endl;
 	const WrongAnimal* i = new WrongCat();
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
+	i->makeSound(); //will not output the cat sound!
+	WrongCat b;
+	b.makeSound(); //will output the cat sound!
 	delete i;
 }
 

@@ -6,38 +6,49 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:26:19 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/03 09:40:33 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:42:29 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-// Constructors
+// Default constructor
 Dog::Dog( void ) : Animal() 
 {
-	this->type = "Dog";
+	std::cout << "Dog default constructor called" << std::endl;
+	this->setType("Dog");
 }
 
+// String constructor
 Dog::Dog( std::string arg ) : Animal ( arg )
 {
-	this->type = "Dog";
+	std::cout << "Dog string constructor called" << std::endl;
+	this->setType("Dog");
 }
 
-Dog::Dog( const Dog &to_be_copied ) : Animal( to_be_copied ) {}
+// Copy constructor
+Dog::Dog( const Dog &to_be_copied ) : Animal( to_be_copied ) 
+{
+	std::cout << "Dog copy constructor called" << std::endl;
+}
+
+Dog& Dog::operator = ( const Dog &to_be_copied )
+{
+	std::cout << "Dog copy assignment operator called" << std::endl;
+	
+	if (this != &to_be_copied)
+	{
+		this->setType(to_be_copied.getType());
+	}
+	return *this;
+}
 
 // Destructor
-Dog::~Dog( void ) {}
+Dog::~Dog( void ) 
+{
+	std::cout << "Dog destructor called" << std::endl;
+}
 
-// Dog& Dog::operator = ( const Dog &to_be_copied )
-// {
-// 	std::cout << "Copy assignment operator called" << std::endl;
-	
-// 	if (this != &to_be_copied)
-// 	{
-// 		this->type = to_be_copied.type;
-// 	}
-// 	return *this;
-// }
 
 // Member functions
 void Dog::makeSound( void ) const

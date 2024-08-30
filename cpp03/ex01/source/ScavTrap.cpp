@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 08:19:13 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/02 10:58:09 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:03:44 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,18 @@ ScavTrap::ScavTrap( std::string arg ) : ClapTrap( arg )
 ScavTrap::ScavTrap( const ScavTrap &to_be_copied ) : ClapTrap( to_be_copied )
 {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
+}
+
+// Copy assignment operator
+ScavTrap& ScavTrap::operator = ( const ScavTrap &to_be_copied )
+{
+	std::cout << "ScavTrap copy assignment operator called" << std::endl;
+	
+	if (this != &to_be_copied)
+	{
+		*this = to_be_copied;
+	}
+	return *this;
 }
 
 // Destructor

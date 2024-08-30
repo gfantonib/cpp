@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/07 14:16:29 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/17 15:30:53 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-#include "Animal.hpp"
+#include <iostream>
 
-class Cat : public Animal
+class Animal
 {
 	private:
-	
+	std::string type;
+
 	public:
-	Cat( void ); // Default constructor
-	Cat( std::string arg ); // String constructor
-	Cat( const Cat &to_be_copied ); // Copy constructor
-	Cat &operator = ( const Cat &to_be_copied ); // Copy assignment opertor
-	~Cat(); // Destructor
+	Animal( void ); // Default constructor
+	Animal( std::string arg ); // String arg constructor
+	Animal( const Animal &to_be_copied ); // Copy constructor
+	Animal &operator = ( const Animal &to_be_copied ); // Copy assignment opertor
+
+	// Destructor
+	virtual ~Animal();
 
 	// Member functions
-	void makeSound( void ) const;
+	virtual void makeSound( void ) const = 0; // This is a pure virtual function and it prohibits for you to declare (instantiate) a Anmial type.
+	void setType( std::string str );
+	std::string getType( void ) const;
 };
 
 #endif

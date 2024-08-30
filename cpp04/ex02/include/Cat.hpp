@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/07 14:16:29 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 13:53:30 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 #define CAT_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
 	private:
+	Brain* brain;
 	
 	public:
 	Cat( void ); // Default constructor
@@ -28,6 +30,8 @@ class Cat : public Animal
 
 	// Member functions
 	void makeSound( void ) const;
+	void setBrain( std::string idea );
+	void showBrain( void );
 };
 
 #endif

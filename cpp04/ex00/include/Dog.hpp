@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 11:23:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/03 09:40:14 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/07 14:39:51 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Dog : public Animal
 	Dog( void ); // Default constructor
 	Dog( std::string arg ); // String arg constructor
 	Dog( const Dog &to_be_copied ); // Copy constructor
+	Dog &operator = ( const Dog &to_be_copied ); // Copy assignment opertor
+
 	
 	~Dog(); // Destructor
 

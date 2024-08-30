@@ -6,7 +6,7 @@ HEADER = -I$(INCPATH)
 OBJPATH = object
 
 NAME = executable
-SRCFILES = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCFILES = Brain.cpp Animal.cpp Dog.cpp Cat.cpp
 SRCMAIN = main.cpp
 MAINOBJ = $(OBJPATH)/$(SRCMAIN:.cpp=.o)
 OBJ = $(SRCFILES:%.cpp=$(OBJPATH)/%.o)

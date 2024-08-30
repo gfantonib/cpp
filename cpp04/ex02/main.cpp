@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/17 15:25:31 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/07 15:29:54 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void newCopyTest( void );
 
 int main( void )
 {
+	// Uncoment this for you to see the compilation problem due to the pure virtual function in Animal.
+	// Animal rhino;
+	// rhino.makeSound();
 	std::cout << "-----------------------" << std::endl;
 	subjectTest();
 	std::cout << "-----------------------" << std::endl;
@@ -63,7 +66,6 @@ void copyTest( void )
 	Cat a;
 	a.setBrain("fish");
 	a.showBrain();
-	a.showBrainMem();
 
 	std::cout << std::endl;
 
@@ -71,14 +73,11 @@ void copyTest( void )
 	b.showBrain();
 	b = a;
 	b.showBrain();
-	b.showBrainMem();
 
 	std::cout << std::endl;
 
 	Cat c(a);
 	c.showBrain();
-
-	c.showBrainMem();
 }
 
 void newCopyTest( void )

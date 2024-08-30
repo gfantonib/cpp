@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 11:21:45 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/08/02 11:09:29 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/08/06 15:28:09 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 void ClapTrapTest( void );
 void ScavTrapTest( void );
+void CopyTest( void );
 
 int main( void )
 {
@@ -22,6 +23,8 @@ int main( void )
 	ClapTrapTest();
 	std::cout << std::endl;
 	ScavTrapTest();
+	std::cout << std::endl;
+	CopyTest();
 	std::cout << std::endl;
 	return 0;
 }
@@ -48,4 +51,20 @@ void ScavTrapTest( void )
 	emerald.beRepaired(2);
 	emerald.guardGate();
 	emerald.showPoints();
+}
+
+void CopyTest( void )
+{
+	std::cout << "COPY TEST" << std::endl << std::endl;
+	ScavTrap emerald("emerald");
+	
+	emerald.attack("ruby");
+	emerald.takeDamage(5);
+	emerald.beRepaired(2);
+	emerald.guardGate();
+	emerald.showPoints();
+
+	std::cout << std::endl;
+	ScavTrap fresh(emerald);
+	fresh.showPoints();
 }
